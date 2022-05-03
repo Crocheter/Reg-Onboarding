@@ -3,7 +3,7 @@
     <div class="first-page col-5">
       <img src="./assets/bg.png" alt="Background" class="img-fluid Bg">
     </div>
-    <div class="container col-7" v-if="pageChange===true">
+    <div class="container col-7" v-if="firstPage===false">
       <h6 class="reg-link text-end mt-5 me-4">Already have an account? <span>Sign In</span></h6>
       <div class="form">
         <div class="heading">
@@ -11,10 +11,10 @@
           <p>To begin this journey, tell us what type of account you'd be opening.</p>
         </div>
         <div class="buttons">
-          <button class="pt-3 mb-5 d-flex">
+          <button class="pt-3 mb-5 d-flex" @click="firstPage=!firstPage; secondPage=!secondPage">
             <img src="./assets/user.png" alt="" class="user img-fluid">
             <img src="./assets/BluePolygon.png" alt="" class="Bp img-fluid">
-            <div class="Individual text-start" @click="regOn(pageChange=false)">
+            <div class="Individual text-start">
               <h6 style="font-size: 16px; font-weight: 500;">
                 Individual
               </h6>
@@ -40,10 +40,10 @@
     </div>
 
 
-    <div class="container second-page col-7 mt-5" id="page-two" v-if="false">
+    <div class="container second-page col-7 mt-5" v-show="secondPage">
       <header>
         <div class="d-flex justify-content-between">
-          <div class="d-flex" @click="regOn(pageChange=true)">
+          <div class="d-flex" >
             <img src="./assets/arrow-back.png" alt="" class="Arrow-back img-fluid"><h6 style="color: #8692A6; font-weight: 600;"
             class="mx-2">
               Back</h6>
@@ -96,7 +96,7 @@
 
         <div>
           <button style="background-color: #1565D8; width: 426px; height: 64px; color: #FFFFFF; border-radius: 5px; border: none;" 
-          class="mb-3" onclick="profileOn()">Register Account</button>
+          class="mb-3" @click="secondPage=!secondPage; thirdPage=!thirdPage">Register Account</button>
           <h6 style="color: #BABABA; font-size: 10px;" class="text-center">Or</h6>
           <button style="display: block; background-color: #FFFFFF; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
           border: none; width: 426px; height: 64px;" class="d-flex align-items-center">
@@ -110,7 +110,7 @@
       </form>
     </div>
 
-    <div class="third-page col-7 container mt-5" id="showThird" v-if="false">
+    <div class="third-page col-7 container mt-5" v-show="thirdPage">
       <header>
         <div class="d-flex justify-content-between">
         <div class="d-flex">
@@ -179,13 +179,14 @@
           />
         </div>
         <button style="width: 425px; border: none; background-color: #1565D8; color: #FFFFFF;
-        height: 45px; border-radius: 5px;" class="mb-4">Save & Continue</button>
+        height: 45px; border-radius: 5px;" class="mb-4"
+        @click="thirdPage=!thirdPage; fourthPage=!fourthPage">Save & Continue</button>
           <h6 class="lock text-center" style="font-size: 10px; color: #8692A6;">
           <img src="./assets/lock.png" alt="">Your Info is safely secured</h6>
       </form>
     </div>
     
-    <div class="fourth-page container col-7" v-if="true">
+    <div class="fourth-page container col-7" v-show="fourthPage">
        <header>
         <div class="d-flex justify-content-between mt-5">
         <h6 style="color: #8692A6; font-weight: 600;"><img src="./assets/arrow-back.png" alt="">Back</h6>
@@ -322,23 +323,21 @@ form {
 export default {
   data() {
     return {
-      pageChange: false,
-      // showThird: true
+      firstPage: false,
+      secondPage: false,
+      thirdPage: false,
+      fourthPage: false,
+      // pageOn: true
+      
     }
   },
 
-  methods: {
-         regOn(){
-           
-         },
-        //  profileOn(){
-
-        //  }
-       }
+//   methods: {
+//          regOn(){
+//            pageOn = true
+         
+//        }
+// }
 }
 
-function profileOn() {
-            document.getElementById('showThird').style.display='block';
-            
-        }
 </script>
