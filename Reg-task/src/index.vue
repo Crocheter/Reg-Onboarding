@@ -40,7 +40,7 @@
     </div>
 
 
-    <div class="container second-page col-7 mt-5" id="page-two" v-if="pageChange===false">
+    <div class="container second-page col-7 mt-5" id="page-two" v-if="false">
       <header>
         <div class="d-flex justify-content-between">
           <div class="d-flex" @click="regOn(pageChange=true)">
@@ -50,7 +50,7 @@
           </div>
         <h6 style="color: #BDBDBD; font-weight: 500;" class="me-5">STEP 01/03</h6>
         </div>
-        <div class="text-end me-5" style="color: #8692A6; font-weight: 600;">Personal Info</div>
+        <div class="text-end me-5" style="color: #8692A6; font-weight: 600;">Personal Info.</div>
         
       </header>
       <form action="" class="mt-5">
@@ -110,26 +110,35 @@
       </form>
     </div>
 
-    <div class="third-page col-7 container" id="showThird" v-show="false">
+    <div class="third-page col-7 container mt-5" id="showThird" v-if="false">
       <header>
-        <div>
-        <img src="./assets/arrow-back.png" alt=""><h6 style="color: #8692A6; font-weight: 600;"
+        <div class="d-flex justify-content-between">
+        <div class="d-flex">
+          <img src="./assets/arrow-back.png" alt="" class="Arrow-back">
+          <h6 style="color: #8692A6; font-weight: 600;"
             class="mx-2">Back</h6>
-        <h6>STEP 02/03</h6>
         </div>
-        <div class="text-end">Personal Info</div>
+        <h6 style="color: #BDBDBD; font-weight: 500;" class="me-4">STEP 02/03</h6>
+        </div>
+        <div class="text-end me-4" style="color: #8692A6; font-weight: 600;">Residency Info.</div>
         
       </header>
 
-      <form>
+      <form class="mt-5">
       <div>
-          <h1>Complete Your Profile!</h1>
-          <p>For the purpose of industry regulation, your details are required.</p>
+          <h1 style="font-size: 27px; font-weight: 700;">Complete Your Profile!</h1>
+          <p style="color: #8692A6; width: 314px;">For the purpose of industry regulation, your details are required.</p>
       </div>
-      <div class="form-group">
+      <div class="form-group mb-3 mt-3">
           <label for="number">Phone number</label>
-          <div>
+          <div class="d-flex">
             <img src="./assets/Group.svg" alt="">
+              <select name="number-codes" id="nom" style="border: none;">
+                <option value="rigatoni">Rigatoni</option>
+                <option value="dave">Dave</option>
+                <option value="pumpernickel">Pumpernickel</option>
+                <option value="reeses">Reeses</option>
+              </select>
             <input
               type="text"
               id="address"
@@ -150,7 +159,7 @@
           <img src="./assets/naija.png" alt="">
           <input type="text" class="form-control" aria-label="Text input with dropdown button">
         </div> -->
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="address">Your address</label>
           <input
             type="text"
@@ -160,7 +169,7 @@
           />
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-4">
           <label for="country">Country of Residence</label>
           <input
             type="text"
@@ -169,27 +178,29 @@
             placeholder="Please select"
           />
         </div>
-        <button>Save & Continue</button>
-        <h6 class="lock"><img src="./assets/lock.png" alt="">Your Info is safely secured</h6>
+        <button style="width: 425px; border: none; background-color: #1565D8; color: #FFFFFF;
+        height: 45px; border-radius: 5px;" class="mb-4">Save & Continue</button>
+          <h6 class="lock text-center" style="font-size: 10px; color: #8692A6;">
+          <img src="./assets/lock.png" alt="">Your Info is safely secured</h6>
       </form>
     </div>
     
-    <div class="fourth-page container col-7" v-if="false">
+    <div class="fourth-page container col-7" v-if="true">
        <header>
-        <div>
-        <img src="./assets/arrow-back.png" alt=""><h6>Back</h6>
-        <h6>STEP 03/03</h6>
+        <div class="d-flex justify-content-between mt-5">
+        <h6 style="color: #8692A6; font-weight: 600;"><img src="./assets/arrow-back.png" alt="">Back</h6>
+        <h6 class="me-4" style="color: #BDBDBD; font-weight: 500;">STEP 03/03</h6>
         </div>
-        <div class="text-end">Personal Info</div>
+        <div class="text-end me-4" style="color: #8692A6; font-weight: 600;">Bank Verification</div>
         
       </header>
 
-      <form>
+      <form class="mt-5">
         <div>
           <h1>Complete Your Profile!</h1>
           <p>For the purpose of industry regulation, your details are required.</p>
         </div>
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="country">Bank Verification Number(BVN)</label>
           <input
             type="number"
@@ -198,8 +209,9 @@
             placeholder="0123456789"
           />
         </div>
-        <button>Save & Continue</button>
-        <h6 class="lock"><img src="./assets/lock.png" alt="">Your Info is safely secured</h6>
+        <button style="width: 425px; border: none; background-color: #1565D8; color: #FFFFFF;
+        height: 45px; border-radius: 5px;" class="mb-4">Save & Continue</button>
+        <h6 class="lock text-center" style="font-size: 10px; color: #8692A6;"><img src="./assets/lock.png" alt="">Your Info is safely secured</h6>
       </form>
 
     </div>
@@ -310,7 +322,7 @@ form {
 export default {
   data() {
     return {
-      pageChange: true,
+      pageChange: false,
       // showThird: true
     }
   },
