@@ -65,7 +65,7 @@
             type="text"
             id="name"
             class="form-control"
-            placeholder="Abisola Odutayo"
+            placeholder="Enter full name"
           />
         </div>
         <div class="form-group mb-3">
